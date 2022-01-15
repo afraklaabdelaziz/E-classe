@@ -1,0 +1,22 @@
+.body{
+    background: linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%);
+    height: 100vh;
+}
+aside{
+    background-color: #FAFFC1;
+}
+.title{
+    border-left: solid 6px #00C1FE;
+}
+.div1{
+    background-color: hsla(204, 100%, 97%, 1);
+}
+.div2{
+    background-color: hsla(322, 80%, 98%, 1);
+}
+.div3{
+    background-color: hsla(50, 90%, 96%, 1);
+}
+.div4{
+    background: linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%);
+}

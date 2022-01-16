@@ -2,6 +2,9 @@
     background: linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%);
     height: 100vh;
 }
+body{
+    background-color: #e5e5e56e;
+}
 aside{
     background-color: #FAFFC1;
 }
@@ -19,4 +22,16 @@ aside{
 }
 .div4{
     background: linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%);
+}
+.img{
+    height: 50px !important;
+}
+.head{
+    color: rgba(172, 172, 172, 1);
+}
+table{
+    border-spacing: 0 15px !important;
+    border-collapse: separate;
+    max-width: 1200px !important;
+    width: 1200px !important;
 }

@@ -35,3 +35,6 @@ table{
     max-width: 1200px !important;
     width: 1200px !important;
 }
+.sidebar {
+    overflow-x: hidden;
+}

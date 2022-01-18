@@ -35,6 +35,27 @@ table{
     max-width: 1200px !important;
     width: 1200px !important;
 }
-.sidebar {
-    overflow-x: hidden;
-}
+.side-navbar {
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    margin-left: -300px;
+    background-color: #FAFFC1;
+    transition: 0.5s;
+  }
+  
+  .my-container {
+    transition: 0.4s;
+  }
+  
+  .active-nav {
+    margin-left: 0;
+  }
+  .active-cont {
+    margin-left: 180px;
+  }
+
+
+
+  
+ 

@@ -33,7 +33,7 @@ table{
     border-spacing: 0 15px !important;
     border-collapse: separate;
     max-width: 1200px !important;
-    width: 1200px !important;
+    width: 1500px !important;
 }
 .side-navbar {
     width: 180px;
@@ -43,7 +43,9 @@ table{
     background-color: #FAFFC1;
     transition: 0.5s;
   }
-  
+  a:active{
+      background-color:#00C1FE;
+  }
   .my-container {
     transition: 0.4s;
   }

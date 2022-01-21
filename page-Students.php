@@ -32,29 +32,23 @@
             foreach($thead as $key=>$value){
             echo "<th class='head h-50'>$value</th>";
             }
-            $tbody=array(["img"=>'<img class="img p-2" src="Images/students.png">',"name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022","modifier"=>"<i class='bx bx-pencil btn text-info'></i>
-            <i class='bx bx-trash btn text-info'></i>"],
-            ["img"=>'<img class="img p-2" src="Images/students.png">',"name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022","modifier"=>"<i class='bx bx-pencil btn text-info'></i>
-            <i class='bx bx-trash btn text-info'></i>"],
-            ["img"=>'<img class="img p-2" src="Images/students.png">',"name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022","modifier"=>"<i class='bx bx-pencil btn text-info'></i>
-            <i class='bx bx-trash btn text-info'></i>"],
-            ["img"=>'<img class="img p-2" src="Images/students.png">',"name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022","modifier"=>"<i class='bx bx-pencil btn text-info'></i>
-            <i class='bx bx-trash btn text-info'></i>"],
-            ["img"=>'<img class="img p-2" src="Images/students.png">',"name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022","modifier"=>"<i class='bx bx-pencil btn text-info'></i>
-            <i class='bx bx-trash btn text-info'></i>"],
-            ["img"=>'<img class="img p-2" src="Images/students.png">',"name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022","modifier"=>"<i class='bx bx-pencil btn text-info'></i>
-            <i class='bx bx-trash btn text-info'></i>"],
-            ["img"=>'<img class="img p-2" src="Images/students.png">',"name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022","modifier"=>"<i class='bx bx-pencil btn text-info'></i>
-            <i class='bx bx-trash btn text-info'></i>"],
-            ["img"=>'<img class="img p-2" src="Images/students.png">',"name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022","modifier"=>"<i class='bx bx-pencil btn text-info'></i>
-            <i class='bx bx-trash btn text-info'></i>"]);
-            foreach($tbody as $key){
-            echo "<tr class='bg-white'>";
+            $tbody=array(
+            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
+            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
+            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
+            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
+            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
+            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
+            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
+            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022")
+            );
+            foreach($tbody as $key):
+            echo "<tbody class=\"bg-white\">";
             echo "<td>";
-            echo $key["img"];
-            echo "</td>";
+            echo "<img class=\"img p-2\" src=\"Images/students.png\">" ;
+            echo "</td>";    
             echo "<td>";
-            echo $key["name"];
+            echo $key["name"];            
             echo "</td>";
             echo "<td>";
             echo $key["email"];
@@ -69,10 +63,10 @@
             echo $key["date"];
             echo "</td>";
             echo "<td>";
-            echo $key["modifier"];
+            echo "<i class='bx bx-pencil btn text-info'></i> <i class='bx bx-trash btn text-info'></i>";
             echo "</td>";
-            echo "</tr>";
-            }
+            echo "</tbody>";
+            endforeach;
             echo "</table>";
             ?>
    </div>

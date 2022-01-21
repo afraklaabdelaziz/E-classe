@@ -29,12 +29,14 @@
         foreach($thead as $key=>$value){
         echo "<th class='head h-50'>$value</th>";
         }
-        $tbody=array(["name"=>"abdelaziz","pay"=>"First","number"=>"123456","paid"=>"100,000","balance"=>"500,000","date"=>"21/01/2022","vue"=>"<i class='bx bxs-show text-info'></i>"],
-        ["name"=>"abdelaziz","pay"=>"First","number"=>"123456","paid"=>"100,000","balance"=>"500,000","date"=>"21/01/2022","vue"=>"<i class='bx bxs-show text-info'></i>"],
-        ["name"=>"abdelaziz","pay"=>"First","number"=>"123456","paid"=>"100,000","balance"=>"500,000","date"=>"21/01/2022","vue"=>"<i class='bx bxs-show text-info'></i>"],
-        ["name"=>"abdelaziz","pay"=>"First","number"=>"123456","paid"=>"100,000","balance"=>"500,000","date"=>"21/01/2022","vue"=>"<i class='bx bxs-show text-info'></i>"]);
-        foreach($tbody as $key){
-            echo "<tr class='bg-white'>";
+        $tbody=array(
+        array("name"=>"abdelaziz","pay"=>"First","number"=>"123456","paid"=>"100,000","balance"=>"500,000","date"=>"21/01/2022"),
+        array("name"=>"abdelaziz","pay"=>"First","number"=>"123456","paid"=>"100,000","balance"=>"500,000","date"=>"21/01/2022"),
+        array("name"=>"abdelaziz","pay"=>"First","number"=>"123456","paid"=>"100,000","balance"=>"500,000","date"=>"21/01/2022"),
+        array("name"=>"abdelaziz","pay"=>"First","number"=>"123456","paid"=>"100,000","balance"=>"500,000","date"=>"21/01/2022")
+        );
+        foreach($tbody as $key):
+        echo "<tbody class=\"bg-white\">";
             echo "<td>";
             echo $key["name"];
             echo "</td>";
@@ -54,10 +56,34 @@
             echo $key["date"];
             echo "</td>";
             echo "<td>";
-            echo $key["vue"];
+            echo "<i class='bx bxs-show text-info'></i>";
             echo "</td>";
-            echo "</tr>";
-        }
+        echo "</tbody>";
+
+            // echo "<tr class='bg-white'>";
+            // echo "<td>";
+            // echo $key["name"];
+            // echo "</td>";
+            // echo "<td>";
+            // echo $key["pay"];
+            // echo "</td>";
+            // echo "<td>";
+            // echo $key["number"];
+            // echo "</td>";
+            // echo "<td>";
+            // echo $key["paid"];
+            // echo "</td>";
+            // echo "<td>";
+            // echo $key["balance"];
+            // echo "</td>";
+            // echo "<td>";
+            // echo $key["date"];
+            // echo "</td>";
+            // echo "<td>";
+            // echo $key["vue"];
+            // echo "</td>";
+            // echo "</tr>";
+        endforeach;
         echo "</table>"
         ?>
 </div>

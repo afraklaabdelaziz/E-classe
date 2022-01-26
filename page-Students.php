@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,75 +11,65 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
+
 <body>
-<?php
-    include ("AsideBar.php");
-    echo '<div class="px-1 my-container active-cont">';
-    include ("Header.php");
-    ?>
-     <section class="row col-12 d-flex w-100">
-    <div class=" row d-flex flex-row justify-content-between p-2 border-bottom">
-        <p class="h5 fw-bold col-12 col-md-4 col-lg-6 col-xl-8">Students list</p>
-        <div class="row col-12 col-md-8 col-lg-6 col-xl-4">
-            <i class='bx bxs-sort-alt btn text-info col-3'></i>
-            <div class="btn btn-info col-9">ADD NEW STUDENTS</div>
+    <main>
+        <?php
+        include("AsideBar.php");
+        echo '<div class="px-1 my-container active-cont">';
+        include("Header.php");
+        ?>
+        <section class="row col-12 d-flex w-100">
+            <div class=" row d-flex flex-row justify-content-between p-2 border-bottom">
+                <p class="h5 fw-bold col-12 col-md-4 col-lg-6 col-xl-8">Students list</p>
+                <div class="row col-12 col-md-8 col-lg-6 col-xl-4">
+                    <i class='bx bxs-sort-alt btn text-info col-3'></i>
+                    <div class="btn btn-info col-9">ADD NEW STUDENTS</div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <?php
+                echo "<table>";
+                echo "<tr>";
+                $thead = ["img" => "", "name" => "Name", "email" => "Email", "phone" => "Phone", "number" => "Enroll Number", "date" => "Date of admission", "modifier" => ""];
+                foreach ($thead as $key => $value) {
+                    echo "<th class='head h-50'>$value</th>";
+                }
+                echo "</tr>";
+                $students = array(
+                    array("name" => "Afrakla abdelaziz", "email" => "afraklaabdelaziz@gmail.com", "phone" => "0639616681", "number" => "12345678", "date" => "20/01/2022"),
+                    array("name" => "Afrakla abdelaziz", "email" => "afraklaabdelaziz@gmail.com", "phone" => "0639616681", "number" => "12345678", "date" => "20/01/2022"),
+                    array("name" => "Afrakla abdelaziz", "email" => "afraklaabdelaziz@gmail.com", "phone" => "0639616681", "number" => "12345678", "date" => "20/01/2022"),
+                    array("name" => "Afrakla abdelaziz", "email" => "afraklaabdelaziz@gmail.com", "phone" => "0639616681", "number" => "12345678", "date" => "20/01/2022"),
+                    array("name" => "Afrakla abdelaziz", "email" => "afraklaabdelaziz@gmail.com", "phone" => "0639616681", "number" => "12345678", "date" => "20/01/2022"),
+                    array("name" => "Afrakla abdelaziz", "email" => "afraklaabdelaziz@gmail.com", "phone" => "0639616681", "number" => "12345678", "date" => "20/01/2022"),
+                    array("name" => "Afrakla abdelaziz", "email" => "afraklaabdelaziz@gmail.com", "phone" => "0639616681", "number" => "12345678", "date" => "20/01/2022"),
+                    array("name" => "Afrakla abdelaziz", "email" => "afraklaabdelaziz@gmail.com", "phone" => "0639616681", "number" => "12345678", "date" => "20/01/2022")
+                );
+                foreach ($students as $student) :
+                    echo "<tr class=\"bg-white\">";
+                    echo "<td><img class=\"img p-2\" src=\"Images/students.png\" alt=\"photo etudient\"></td>";
+                    foreach ($student as $key => $value) :
+                        echo "<td>$value</td>";
+                    endforeach;
+                    echo "<td><i class='bx bx-pencil btn text-info'></i> <i class='bx bx-trash btn text-info'></i></td>";
+                    echo "</tr>";
+                endforeach;
+                echo "</table>";
+                ?>
+            </div>
+        </section>
         </div>
-    </div>
-   <div class="table-responsive">
-            <?php
-            echo "<table>";
-            echo "<tr>";
-            $thead=["img"=>"","name"=>"Name","email"=>"Email","phone"=>"Phone","number"=>"Enroll Number","date"=>"Date of admission","modifier"=>""];
-            foreach($thead as $key=>$value){
-            echo "<th class='head h-50'>$value</th>";
-            }
-            $tbody=array(
-            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
-            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
-            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
-            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
-            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
-            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
-            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022"),
-            array("name"=>"Afrakla abdelaziz","email"=>"afraklaabdelaziz@gmail.com","phone"=>"0639616681","number"=>"12345678","date"=>"20/01/2022")
-            );
-            foreach($tbody as $key):
-            echo "<tbody class=\"bg-white\">";
-            echo "<td>";
-            echo "<img class=\"img p-2\" src=\"Images/students.png\">" ;
-            echo "</td>";    
-            echo "<td>";
-            echo $key["name"];            
-            echo "</td>";
-            echo "<td>";
-            echo $key["email"];
-            echo "</td>";
-            echo "<td>";
-            echo $key["phone"];
-            echo "</td>";
-            echo "<td>";
-            echo $key["number"];
-            echo "</td>";
-            echo "<td>";
-            echo $key["date"];
-            echo "</td>";
-            echo "<td>";
-            echo "<i class='bx bx-pencil btn text-info'></i> <i class='bx bx-trash btn text-info'></i>";
-            echo "</td>";
-            echo "</tbody>";
-            endforeach;
-            echo "</table>";
-            ?>
-   </div>
-</section>
-</div>
-<script>
-    var menu_btn = document.querySelector("#menu-btn");
+    </main>
+    <script>
+        var menu_btn = document.querySelector("#menu-btn");
         var sidebar = document.querySelector("#sidebar");
         var container = document.querySelector(".my-container");
         menu_btn.addEventListener("click", () => {
-        sidebar.classList.toggle("active-nav");
-        container.classList.toggle("active-cont");
-        });</script>
+            sidebar.classList.toggle("active-nav");
+            container.classList.toggle("active-cont");
+        });
+    </script>
 </body>
+
 </html>

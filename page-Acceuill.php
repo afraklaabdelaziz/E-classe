@@ -11,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+    <main>
     <?php
     include ("AsideBar.php");
     echo '<div class="px-1 my-container active-cont">';
@@ -27,7 +28,7 @@
         <span>Course</span>
         <p class="h2 text-end m-2">234</p>
     </div>
-    <div class="m-2 col-12 col-md-4 col-xl-2    div3 d-flex flex-column">
+    <div class="m-2 col-12 col-md-4 col-xl-2 div3 d-flex flex-column">
         <i class='bx bx-dollar'></i>
         <span>Payment</span>
         <p class=" h4 text-end m-2">550.00
@@ -41,6 +42,7 @@
     </div>
 </section>
 </div>
+</main>
 <script>
     var menu_btn = document.querySelector("#menu-btn");
         var sidebar = document.querySelector("#sidebar");
@@ -49,5 +51,6 @@
         sidebar.classList.toggle("active-nav");
         container.classList.toggle("active-cont");
         });</script>
+
 </body>
 </html>

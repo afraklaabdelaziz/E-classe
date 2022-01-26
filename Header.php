@@ -11,6 +11,5 @@ echo <<< Header
            <i class='bx bxs-bell m-1 px-2 btn'></i>
             </div>
          </header>
-Header;
-
-?>
+      Header;
+ ?>

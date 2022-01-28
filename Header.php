@@ -2,7 +2,7 @@
 
 echo <<< Header
        <header class=" bg-white d-flex flex-row justify-content-between p-1 sticky-top">
-            <a class="btn border-0" id="menu-btn"><i class="bx bx-caret-left-circle"></i></a>
+            <a class="btn" id="menu-btn"><i class="bx bx-caret-left-circle"></i></a>
             <div class="d-flex">
            <div class="border rounded-3 col-9">
             <input class="border-0 h-100 col-8 col-sm-9" type="search" placeholder=" search... ">

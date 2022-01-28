@@ -21,7 +21,7 @@
         ?>
         <section class="row col-12 d-flex w-100">
             <div class="d-flex flex-row justify-content-between p-2 border-bottom">
-                <p class="h5 col-11">Payment Details</p>
+                <p class="h5">Payment Details</p>
                 <i class='bx bxs-sort-alt btn text-info col-1'></i>
             </div>
             <div class="table-responsive">

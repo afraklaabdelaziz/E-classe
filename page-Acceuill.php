@@ -36,7 +36,7 @@
         </p> 
     </div>
     <div class="m-2 col-12 col-md-4 col-xl-2 div4 d-flex flex-column">
-        <i class='bx bx-user taille' ></i>
+        <i class='bx bx-user' ></i>
         <span>Users</span>
         <p class="text-end m-2 h2">3</p>
     </div>

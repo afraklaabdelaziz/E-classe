@@ -5,20 +5,20 @@ echo '
     <p class="title fw-bold h5">E-classe</p>
     <div class="d-flex flex-column align-items-center mt-5">
     <img class="rounded-circle w-50" src="Images/youcode.jpeg" alt="photo admin">
-   <span class="text-center">Afrakla abdelaziz</span>
+   <span>Afrakla abdelaziz</span>
    <span class="text-info">admin</span>
    </div>
     </div>
 <div class="d-flex flex-column justify-content-around h-75 col-12">
     <ul class="list-group col-12 d-flex flex-column align-items-center mt-5">
-        <li class=" list-group list-group-item-action">
+        <li class="list-group">
           <a class="btn" href="page-Acceuill.php">
             <i class="bx bx-home" ></i>
             <span class="fw-bold">Home</span>
           </a>
         </li>
-        <li class=" list-group">
-           <a class="btn mt-2 " href="">
+        <li class="list-group">
+           <a class="btn mt-2" href="">
             <i class="bx bx-bookmark"></i>
               <span class="fw-bold">Course</span>
            </a>
@@ -28,7 +28,7 @@ echo '
             <i class="bx bxs-graduation"></i>
              <span class="fw-bold">Students</span>
           </a>
-          <a class="btn mt-2" href="page-Payment.php">
+          <a class="btn mt-2 active " href="page-Payment.php">
           <i class="bx bx-dollar"></i>
             <span class="fw-bold">Payment</span>
           </a>
@@ -46,7 +46,7 @@ echo '
            </a>
        </li>
 </ul>
-<div class="list-group">
+<div class="text-center">
 <a class=" btn mt-2" href="index.php">
 <i class="bx bx-log-out"></i>
  <span class="fw-bold">Logout</span>

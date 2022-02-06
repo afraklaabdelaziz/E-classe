@@ -47,7 +47,7 @@ echo '
 </li>
 </ul>
 <div class="list-group">
-<a class=" btn mt-2" href="index.html">
+<a class=" btn mt-2" href="index.php">
 <i class="bx bx-log-out"></i>
  <span class="fw-bold">Logout</span>
 </a>

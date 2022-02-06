@@ -60,7 +60,7 @@
     </div> 
     <?php 
          if(isset($_POST['save'])){
-         include ('dataBase/connexion.php');   
+         include ('PagesOperation/connexion.php');   
          $title = $_POST['title'];
          $type = $_POST['type'];
          $price = $_POST['price'];
@@ -79,7 +79,7 @@
                     echo "<th class='head'>$value</th>";
                 }
                 
-                  include('dataBase/connexion.php');
+                  include('PagesOperation/connexion.php');
                   $sql=$mysql->prepare("SELECT * FROM courses");
                   $sql->execute();
                   while($courses = $sql->fetch(PDO::FETCH_ASSOC)):
@@ -91,8 +91,8 @@
                          <td><?php echo $courses['price'] ?></td>
                          <td><?php echo $courses['duration'] ?></td>
                         <td> 
-                        <a href="dataBase/editCourse.php?id_c=<?php echo $courses['id_c']?>" class='bx bx-pencil btn    text-info'></a>
-                        <a href="dataBase/deleteCourse.php?id_c=<?php echo $courses['id_c']?>" class='bx bx-trash btn
+                        <a href="PagesOperation/editCourse.php?id_c=<?php echo $courses['id_c']?>" class='bx bx-pencil btn    text-info'></a>
+                        <a href="PagesOperation/deleteCourse.php?id_c=<?php echo $courses['id_c']?>" class='bx bx-trash btn
                         text-info'></a>
                         </td>
                      </tr>

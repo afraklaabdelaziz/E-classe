@@ -64,7 +64,7 @@
     </div>
     <?php
         if (isset($_POST['save'])) {
-        include('dataBase/connexion.php');
+        include('PagesOperation/connexion.php');
             $name = $_POST['name'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
@@ -83,7 +83,7 @@
             foreach($thead as $key=>$value){
             echo "<th class='head h-50'>$value</th>";
             }
-            include('dataBase/connexion.php');
+            include('PagesOperation/connexion.php');
               $sql =$mysql->prepare ('SELECT * FROM students' );
               $sql -> execute();
               while($row = $sql->fetch(PDO::FETCH_ASSOC)):
@@ -109,8 +109,8 @@
             <?php echo $row['date']?>
             </td>
             <td>
-            <a href="dataBase/editStudent.php?id=<?php echo $row['id']?>" class='bx bx-pencil btn text-info'></a>
-            <a href="dataBase/deleteStudent.php?id=<?php echo $row['id']?>" class='bx bx-trash btn text-info'></a>
+            <a href="PagesOperation/editStudent.php?id=<?php echo $row['id']?>" class='bx bx-pencil btn text-info'></a>
+            <a href="PagesOperation/deleteStudent.php?id=<?php echo $row['id']?>" class='bx bx-trash btn text-info'></a>
             </td>
             </tr>
             <?php

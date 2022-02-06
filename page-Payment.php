@@ -68,7 +68,7 @@
     </div> 
     <?php 
          if(isset($_POST['save'])){
-         include ('dataBase/connexion.php');   
+         include ('PagesOperation/connexion.php');   
          $name = $_POST['name'];
          $payment_schedule = $_POST['payment_schedule'];
          $bill_number = $_POST['bill_number'];
@@ -89,7 +89,7 @@
                     echo "<th class='head'>$value</th>";
                 }
                 
-                  include('dataBase/connexion.php');
+                  include('PagesOperation/connexion.php');
                   $sql=$mysql->prepare("SELECT * FROM payment_details");
                   $sql->execute();
                   while($payment = $sql->fetch(PDO::FETCH_ASSOC)):

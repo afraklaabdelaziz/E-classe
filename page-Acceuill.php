@@ -15,24 +15,32 @@
     include ("AsideBar.php");
     echo '<div class="px-1 my-container active-cont">';
     include ("Header.php");
+    include('PagesOperation/connexion.php');
+    $students=$mysql->prepare('SELECT COUNT(*) as numberS  FROM students');
+    $students->execute();
+    $nStudents= $students->fetch(PDO::FETCH_ASSOC);
+    $courses=$mysql->prepare('SELECT COUNT(*) as numberC  FROM courses');
+    $courses->execute();
+    $nCourses= $courses->fetch(PDO::FETCH_ASSOC);
+    $payment=$mysql->prepare('SELECT SUM(balance_amount) as totalP FROM payment_details');
+    $payment->execute();
+    $tpayment= $payment->fetch(PDO::FETCH_ASSOC);
     ?>
       <section class=" row col-12 d-flex ">
     <div class=" m-2 col-12 col-xl-2 col-md-4 div1 d-flex flex-column">
         <i class='bx bxs-graduation text-info'></i>
        <span>Students</span>
-       <p class="h2 text-end m-2">234</p>
+       <p class="h2 text-end m-2"><?php echo $nStudents['numberS']?></p>
     </div>
     <div class="m-2 col-12 col-md-4 col-xl-2 div2 d-flex flex-column">
         <i class='bx bx-bookmark'></i>
         <span>Course</span>
-        <p class="h2 text-end m-2">234</p>
+        <p class="h2 text-end m-2"><?php echo $nCourses['numberC']?></p>
     </div>
     <div class="m-2 col-12 col-md-4 col-xl-2    div3 d-flex flex-column">
         <i class='bx bx-dollar'></i>
         <span>Payment</span>
-        <p class=" h4 text-end m-2">550.00
-            <span class="h6">DHS</span>
-        </p> 
+        <p class=" h4 text-end m-2"><?php echo $tpayment['totalP']?><span class="h6">DHS</span></p> 
     </div>
     <div class="m-2 col-12 col-md-4 col-xl-2 div4 d-flex flex-column">
         <i class='bx bx-user taille' ></i>

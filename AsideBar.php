@@ -18,9 +18,9 @@ echo '
     </a>
    </li>
    <li class=" list-group">
-   <a class="btn mt-2 " href="">
+   <a class="btn mt-2 " href="courses.php">
    <i class="bx bx-bookmark"></i>
-  <span class="fw-bold">Course</span>
+  <span class="fw-bold">Courses</span>
    </a>
    </li>
    <li class="list-group active">

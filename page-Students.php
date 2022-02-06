@@ -63,28 +63,19 @@
     </div>
     </div>
     <?php
-    if (isset($_POST['save'])) {
-        $data = file_get_contents('Data_Students.json');
-        $data = json_decode($data, true);
-        $Student_add = array(
-            'img' => $_POST['img'],
-            'name' => $_POST['name'],
-            'email' => $_POST['email'],
-            'phone' => $_POST['phone'],
-            'number' => (int) $_POST['number'],
-            'date' => $_POST['date']
-
-        );
-        $data[] = $Student_add;
-        $data = json_encode($data, JSON_PRETTY_PRINT);
-        file_put_contents('Data_Students.json', $data);
-        echo "<script>
-          window.location.href='page-Students.php';
-          </script>";
+        if (isset($_POST['save'])) {
+        include('dataBase/connexion.php');
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $number = $_POST['number'];
+            $date = $_POST['date'];
+            $sql = $mysql->prepare('INSERT INTO students (name,email,phone,number,date) VALUES (?,?,?,?,?)');
+            $sql->execute([$name, $email, $phone, $number, $date]);
     }
     ?> 
     </div>
-   <div class="table-responsive">
+    <div class="table-responsive">
             <?php
             echo "<table>";
             echo "<tr>";
@@ -92,38 +83,38 @@
             foreach($thead as $key=>$value){
             echo "<th class='head h-50'>$value</th>";
             }
-            $data = file_get_contents('Data_Students.json');
-            $data_students= json_decode($data,true);
-            $index = 0;
-            foreach($data_students as $key): 
+            include('dataBase/connexion.php');
+              $sql =$mysql->prepare ('SELECT * FROM students' );
+              $sql -> execute();
+              while($row = $sql->fetch(PDO::FETCH_ASSOC)):
+
             ?>
             <tr class="bg-white">
             <td>
-            <img class='img p-2' src=" Images/<?php echo $key['img']?>">
+            <img class='img p-2' src=" Images/students">
             </td>    
             <td>
-            <?php echo $key['name']?>      
+            <?php echo $row['name']?>      
             </td>
             <td>
-            <?php echo $key['email']?>
+            <?php echo $row['email']?>
             </td>
             <td>
-            <?php echo $key['phone']?>
+            <?php echo $row['phone']?>
             </td>
             <td>
-            <?php echo $key['number']?>
+            <?php echo $row['number']?>
             </td>
             <td>
-            <?php echo $key['date']?>
+            <?php echo $row['date']?>
             </td>
             <td>
-            <a href="edit_student.php?id=<?php echo $index?>" class='bx bx-pencil btn text-info'></a>
-            <a href="Delete_students.php?id=<?php echo $index?>" class='bx bx-trash btn text-info'></a>
+            <a href="dataBase/editStudent.php?id=<?php echo $row['id']?>" class='bx bx-pencil btn text-info'></a>
+            <a href="dataBase/deleteStudent.php?id=<?php echo $row['id']?>" class='bx bx-trash btn text-info'></a>
             </td>
             </tr>
             <?php
-            $index++;
-             endforeach;
+              endwhile;
              ?>
             </table>  
    </div>

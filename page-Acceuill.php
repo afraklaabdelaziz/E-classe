@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if(isset($_SESSION['user_email'] )){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +16,10 @@
 </head>
 <body>
     <?php
-    include ("AsideBar.php");
+    include ("Aside_Header/AsideBar.php");
     echo '<div class="px-1 my-container active-cont">';
-    include ("Header.php");
-    include('PagesOperation/connexion.php');
+    include ("Aside_Header/Header.php");
+    include("PagesOperation/connexion.php");
     $students=$mysql->prepare('SELECT COUNT(*) as numberS  FROM students');
     $students->execute();
     $nStudents= $students->fetch(PDO::FETCH_ASSOC);
@@ -26,8 +30,8 @@
     $payment->execute();
     $tpayment= $payment->fetch(PDO::FETCH_ASSOC);
     ?>
-      <section class=" row col-12 d-flex ">
-    <div class=" m-2 col-12 col-xl-2 col-md-4 div1 d-flex flex-column">
+      <section class=" m-2 row col-11 d-flex">
+    <div class=" m-1 col-12 col-xl-2 col-md-4 div1 d-flex flex-column">
         <i class='bx bxs-graduation text-info'></i>
        <span>Students</span>
        <p class="h2 text-end m-2"><?php echo $nStudents['numberS']?></p>
@@ -59,3 +63,8 @@
         });</script>
 </body>
 </html>
+<?php 
+ } else{
+     header('location:index.php');
+ }
+ ?>

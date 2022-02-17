@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if(isset($_SESSION['user_email'] )){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +21,8 @@
       $sql->execute();
       $course = $sql->fetch(PDO::FETCH_ASSOC);
     ?> 
-    <form class="form-group col-4 mt-5" method="POST" >
+    <form class="form-group col-11 col-sm-9 col-md-4 mt-5" method="POST" >
+        <h1>UPDATE COURSES</h1>
         <div class="form-group">
             <label for="title" class="form-label">Title</label>
             <input class="form-control" type="text" name="title" id="title" value="<?php echo $course['title']?>">
@@ -54,3 +59,8 @@
 <style>
 </style>
 </html>
+<?php 
+ } else{
+     header('location:../index.php');
+ }
+ ?>

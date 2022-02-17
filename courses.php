@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if(isset($_SESSION['user_email'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,9 +19,9 @@
 <body>
     <main>
         <?php
-        include("AsideBar.php");
+        include("Aside_Header/AsideBar.php");
         echo "<div class=\"px-1 my-container active-cont\">";
-        include("Header.php");
+        include("Aside_Header/Header.php");
         ?>
         <section class="row col-12 d-flex w-100">
             <div class="d-flex flex-row justify-content-between p-2 border-bottom">
@@ -119,3 +123,8 @@
 </body>
 
 </html>
+<?php 
+ } else{
+     header('location:index.php');
+ }
+ ?>

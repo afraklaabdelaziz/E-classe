@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if(isset($_SESSION['user_email'] )){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +21,11 @@
       $sql->execute();
       $row = $sql->fetch(PDO::FETCH_ASSOC);
     ?> 
-    <form class="form-group col-4 mt-5" method="POST" >
+    <form class="form-group col-11 col-sm-9 col-md-4 mt-5" method="POST" enctype="multipart/form-data">
+        <h1>UPDATE STUDENTS</h1>
         <div class="form-group">
             <label for="img" class="form-label">Image</label>
-            <input class="form-control" type="file" name="img" id="img">
+            <input class="form-control" type="file" name="img" id="img" >
         </div>
         <div class="form-group">
             <label for="name" class="form-label">Name</label>
@@ -46,15 +51,18 @@
     </form>
     <?php
     if (isset($_POST['save'])) {
-        $data_input = array(
-            $img = $_POST['img'],
-            $name = $_POST['name'],
-            $email = $_POST['email'],
-            $phone = $_POST['phone'],
-            $number = (int) $_POST['number'],
-            $date = $_POST['date']  
-        );
-        $sql=$mysql->prepare("UPDATE students SET name='$name',email='$email',phone='$phone',number='$number',date='$date' WHERE id=$id");
+            $name_img = $_FILES['img']['name'];
+            $type = $_FILES['img']['type'];
+            $data = file_get_contents($_FILES['img']['tmp_name']); 
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $number = (int) $_POST['number'];
+            $date = $_POST['date']; 
+        $sql=$mysql->prepare("UPDATE students SET name='$name',email='$email',phone='$phone',number='$number',date='$date',name_img=?, type_img=?,data_img=? WHERE id=$id");
+           $sql ->bindParam(1,$name_img);
+             $sql ->bindParam(2,$type);
+             $sql ->bindParam(3,$data);
         $sql->execute();
         header('location:../page-Students.php');
     }
@@ -63,3 +71,8 @@
 <style>
 </style>
 </html>
+<?php 
+ } else{
+     header('location:index.php');
+ }
+ ?>

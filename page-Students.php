@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if(isset($_SESSION['user_email'] )){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +16,9 @@
 </head>
 <body>
 <?php
-    include ("AsideBar.php");
+    include ("Aside_Header/AsideBar.php");
     echo '<div class="px-1 my-container active-cont">';
-    include ("Header.php");
+    include ("Aside_Header/Header.php");
     ?>
      <section class="row col-12 d-flex w-100">
     <div class=" row d-flex flex-row justify-content-between p-2 border-bottom">
@@ -27,14 +31,14 @@
             <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-            <form class="modal-body" method="POST">
+            <form class="modal-body" method="POST"  enctype="multipart/form-data">
             <div class="d-flex">
             <h3 class="modal-title" id="addStudents">ADD NEW STUDENT</h3>
             <i class="btn-close" data-bs-dismiss="modal" aria-label="Close"></i>
             </div>
             <div>
             <label for="img" class="form-label">Image</label>
-            <input class="form-control" type="file" name="img" id="img">
+            <input class="form-control" type="file"  name="img" id="img">
             </div>
             <div>
             <label for="name" class="form-label">Name</label>
@@ -62,18 +66,22 @@
     </div>
     </div>
     </div>
-    <?php
+     <?php
         if (isset($_POST['save'])) {
         include('PagesOperation/connexion.php');
+            $name_img = $_FILES['img']['name'];
+            $type = $_FILES['img']['type'];
+            $data = file_get_contents($_FILES['img']['tmp_name']);
             $name = $_POST['name'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
             $number = $_POST['number'];
             $date = $_POST['date'];
-            $sql = $mysql->prepare('INSERT INTO students (name,email,phone,number,date) VALUES (?,?,?,?,?)');
-            $sql->execute([$name, $email, $phone, $number, $date]);
+            $sql = $mysql->prepare("INSERT INTO students (name,email,phone,number,date,name_img,type_img,data_img) VALUES ('$name','$email','$phone','$number',' $date','$name_img','$type',?)");
+            $sql ->bindParam(1,$data);
+            $sql->execute();
     }
-    ?> 
+    ?>  
     </div>
     <div class="table-responsive">
             <?php
@@ -86,34 +94,35 @@
             include('PagesOperation/connexion.php');
               $sql =$mysql->prepare ('SELECT * FROM students' );
               $sql -> execute();
-              while($row = $sql->fetch(PDO::FETCH_ASSOC)):
-
+              while($students = $sql->fetch(PDO::FETCH_ASSOC)):
+                
             ?>
             <tr class="bg-white">
             <td>
-            <img class='img p-2' src=" Images/students">
+            <?php echo "<img class='img' src='data:".$students['type_img'].";base64,".base64_encode($students['data_img'])."'>" ?>
             </td>    
             <td>
-            <?php echo $row['name']?>      
+            <?php echo $students['name']?>      
             </td>
             <td>
-            <?php echo $row['email']?>
+            <?php echo $students['email']?>
             </td>
             <td>
-            <?php echo $row['phone']?>
+            <?php echo $students['phone']?>
             </td>
             <td>
-            <?php echo $row['number']?>
+            <?php echo $students['number']?>
             </td>
             <td>
-            <?php echo $row['date']?>
+            <?php echo $students['date']?>
             </td>
             <td>
-            <a href="PagesOperation/editStudent.php?id=<?php echo $row['id']?>" class='bx bx-pencil btn text-info'></a>
-            <a href="PagesOperation/deleteStudent.php?id=<?php echo $row['id']?>" class='bx bx-trash btn text-info'></a>
+            <a href="PagesOperation/editStudent.php?id=<?php echo $students['id']?>" class='bx bx-pencil btn text-info'></a>
+            <a href="PagesOperation/deleteStudent.php?id=<?php echo $students['id']?>" class='bx bx-trash btn text-info'></a>
             </td>
             </tr>
             <?php
+
               endwhile;
              ?>
             </table>  
@@ -130,3 +139,8 @@
         });</script>
 </body>
 </html>
+<?php 
+ } else{
+     header('location:index.php');
+ }
+ ?>

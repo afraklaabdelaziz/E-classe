@@ -1,11 +1,12 @@
-<?php
-echo '
+   <!-- <?php 
+   // session_start();
+   ?> -->
    <aside id="sidebar" class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column">
     <div class="h-25 d-flex flex-column align-items-center">
     <p class="title fw-bold h5">E-classe</p>
     <div class="d-flex flex-column align-items-center mt-5">
-    <img class="rounded-circle w-50" src="Images/youcode.jpeg" alt="">
-   <span class="text-center">Afrakla abdelaziz</span>
+    <img class="rounded-circle w-50" src="Aside_Header/abdelaziz.jpg" alt="">
+   <span class="text-center"> <?php echo $_SESSION['user_name'] ?></span>
    <span class="text-info">admin</span>
    </div>
     </div>
@@ -53,5 +54,4 @@ echo '
 </a>
 </div>
 </div>
-</aside> '
-?>
+</aside> 

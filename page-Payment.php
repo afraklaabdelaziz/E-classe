@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if(isset($_SESSION['user_email'] )){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Page Payment E-classe </title>
 </head>
@@ -15,9 +19,9 @@
 <body>
     <main>
         <?php
-        include("AsideBar.php");
+        include("Aside_Header/AsideBar.php");
         echo "<div class=\"px-1 my-container active-cont\">";
-        include("Header.php");
+        include("Aside_Header/Header.php");
         ?>
         <section class="row col-12 d-flex w-100">
             <div class="d-flex flex-row justify-content-between p-2 border-bottom">
@@ -127,3 +131,8 @@
 </body>
 
 </html>
+<?php 
+ } else{
+     header('location:index.php');
+ }
+ ?>

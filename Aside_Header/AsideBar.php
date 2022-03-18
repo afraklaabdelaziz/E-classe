@@ -1,6 +1,3 @@
-   <!-- <?php 
-   // session_start();
-   ?> -->
    <aside id="sidebar" class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column">
     <div class="h-25 d-flex flex-column align-items-center">
     <p class="title fw-bold h5">E-classe</p>
@@ -48,7 +45,7 @@
 </li>
 </ul>
 <div class="list-group">
-<a class=" btn mt-2" href="index.php">
+<a class=" btn mt-2" href="PagesOperation/logout.php">
 <i class="bx bx-log-out"></i>
  <span class="fw-bold">Logout</span>
 </a>

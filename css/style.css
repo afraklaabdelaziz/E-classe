@@ -59,6 +59,12 @@ table{
   .fs{
    font-size: 0.8rem !important;
   }
+  .success input{
+    border: 2px solid rgb(31, 194, 31);
+}
+.error input{
+    border:solid 2px red;
+}
 
 
 

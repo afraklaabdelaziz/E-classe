@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +10,14 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
+
 <body class="d-flex justify-content-center d-flex align-items-center body">
   <div class="container d-flex bg-light align-items-center rounded-3 col-10 col-sm-8 col-md-8 col-lg-6 col-xl-4 p-4">
-    <form action="PagesOperation/page_validation_login.php" class="w-100" method="POST">
-      <h4 class="mx-5 px-2 title fw-bold">E-classe</h4>
+    <form id="formLogin" action="PagesOperation/page_validation_login.php" class="w-100" method="POST">
+      <div class="d-flex justify-content-around">
+        <h4 class="px-2 title fw-bold">E-classe</h4>
+        <a class="btn btn-info" href="Sing_Up.php">SingUp</a>
+      </div>
       <h5 class="text-center pt-4 fw-bold">SING IN</h5>
       <p class="text-center text-muted">Entre your credentials to access your account </p>
       <?php
@@ -21,14 +26,13 @@
           <?php echo $_GET['error'];  ?>
         </div>
       <?php }; ?>
-
       <div class="form-group pt-4">
         <label>Email</label>
-        <input class="form-control" name="email" type="email" value="<?php  if(isset($_COOKIE['user'])) echo $_COOKIE['user']?>" placeholder="entre your email">
+        <input class="form-control" name="email" type="email" value="<?php if (isset($_COOKIE['user'])) echo $_COOKIE['user'] ?>" placeholder="entre your email">
       </div>
       <div class="form-group pt-3">
         <label>Password</label>
-        <input class="form-control" name="pass" type="password" placeholder="entre your password" value="<?php if(isset($_COOKIE['user_p'])) echo $_COOKIE['user_p']?>">
+        <input class="form-control" name="pass" type="password" placeholder="entre your password" value="<?php if (isset($_COOKIE['user_p'])) echo $_COOKIE['user_p'] ?>">
       </div>
       <div>
         <input type="checkbox" id="check" name="check">
